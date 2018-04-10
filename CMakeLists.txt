@@ -116,3 +116,10 @@ target_link_libraries(SDL_image ${LINK_LIBS})
 include_directories(${INCLUDE_DIRS})
 
 target_compile_definitions(SDL_image PUBLIC "${ENABLE_DEFS}")
+
+install(TARGETS SDL_image EXPORT SDLImageTargets
+	RUNTIME DESTINATION bin
+	LIBRARY DESTINATION lib
+	ARCHIVE DESTINATION lib
+    )
+install(FILES ${SRC_H_FILES} DESTINATION include)
